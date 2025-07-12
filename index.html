@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>나만의 첫 웹페이지</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 100px;
+      font-family: Arial;
+    }
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    div {
+      margin-top: 50px;
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 20px;
+      transition: background-color 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <h1>나만의 웹페이지 🎉</h1>
+  <p>버튼을 누르면 색이 바뀌어요!</p>
+  <button onclick="changeColor()">색 바꾸기</button>
+  <div id="colorBox"></div>
+
+  <script>
+    function changeColor() {
+      const box = document.getElementById("colorBox");
+      const colors = ["skyblue", "coral", "gold", "plum", "lightgreen"];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      box.style.backgroundColor = randomColor;
+    }
+  </script>
+</body>
+</html>
