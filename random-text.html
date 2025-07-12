@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>오늘의 응원 한마디</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 100px;
+    }
+    #message {
+      font-size: 24px;
+      margin: 30px auto;
+      padding: 20px;
+      width: 400px;
+      border: 2px solid #4CAF50;
+      border-radius: 10px;
+      background-color: #f0fff0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>오늘의 응원 한마디 💬</h1>
+  <button onclick="showMessage()">응원 받기</button>
+  <div id="message">여기를 눌러 응원을 받아보세요!</div>
+
+  <script>
+    const messages = [
+      "오늘도 잘하고 있어요! 💪",
+      "포기하지 마세요, 당신은 충분히 할 수 있어요!",
+      "조금씩 나아가면 결국 도달해요 😊",
+      "실수는 배움의 시작입니다 🌱",
+      "너무 잘하고 있어요, 진짜로!"
+    ];
+
+    function showMessage() {
+      const randomIndex = Math.floor(Math.random() * messages.length);
+      document.getElementById("message").innerText = messages[randomIndex];
+    }
+  </script>
+</body>
+</html>
