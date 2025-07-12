@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>미니 블로그</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 40px;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+    .input-box {
+      margin-bottom: 20px;
+    }
+    input, textarea {
+      width: 300px;
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .post {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .post h3 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>📝 나만의 미니 블로그</h1>
+  <div class="input-box">
+    <input type="text" id="title" placeholder="글 제목 입력"><br>
+    <textarea id="content" rows="4" placeholder="내용을 입력하세요"></textarea><br>
+    <button onclick="addPost()">글쓰기</button>
+  </div>
+
+  <div id="postArea"></div>
+
+  <script>
+    function addPost() {
+      const title = document.getElementById("title").value;
+      const content = document.getElementById("content").value;
+
+      if (!title || !content) {
+        alert("제목과 내용을 모두 입력해주세요.");
+        return;
+      }
+
+      const postArea = document.getElementById("postArea");
+      const newPost = document.createElement("div");
+      newPost.className = "post";
+      newPost.innerHTML = `<h3>${title}</h3><p>${content}</p>`;
+      postArea.prepend(newPost);  // 가장 위에 추가됨
+
+      // 입력창 초기화
+      document.getElementById("title").value = "";
+      document.getElementById("content").value = "";
+    }
+  </script>
+</body>
+</html>
